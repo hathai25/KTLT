@@ -4,21 +4,29 @@
 using namespace std;
 
 int n;
-string students[100] = {};
+string students[1000] = {"Pham Huy Ha Thai", "Tran Duc Nam"};
 
 int addStudent() {
-    string name;
-    cin.ignore();
-    int i = 0;
-    cout << "New student: ";
-    getline(cin, name);
-    for (int i = 0; i<100; i++) {
-        if (students[i] == "") {
-            students[i] = name;
-            cout << "Student added successfully!";
-            break;
+    while(1) {
+        string name;
+        cin.ignore();
+        cout << "New student: ";
+        getline(cin, name);
+        if (name.length() == 0) break;
+        else {
+            int i = 0;
+            while (students[i] != "") {
+                if (students[i+1] == "") {
+                    students[i+1] = name;
+                    cout << "Student add successfully!";
+                    break;
+                }
+                i++;
+            }
         }
     }
+    
+    
     return 0;
 }
 
