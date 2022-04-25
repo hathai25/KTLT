@@ -12,6 +12,7 @@ int addStudent() {
         cin.ignore();
         cout << "New student: ";
         getline(cin, name);
+        cin.clear();
         if (name.length() == 0) break;
         else {
             int i = 0;
@@ -25,9 +26,20 @@ int addStudent() {
             }
         }
     }
-    
-    
     return 0;
+}
+
+void sortStudent() {
+    int i = 0, j = 1;
+    while (students[i] != "") {
+        while (students[j] != "") {
+            if (students[i].compare(students[j])) {
+                students[i].swap(students[j]);
+            } 
+            j++;
+        }  
+        i++;
+    }
 }
 
 void printStudent() {
@@ -51,7 +63,7 @@ int main() {
             addStudent();
             break;
         case 2: 
-            cout << "sort";
+            sortStudent();
             break;
         case 3:
             printStudent();
