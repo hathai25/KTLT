@@ -33,13 +33,6 @@ int main() {
         }
         cout << "\n";
     }
-    cout << "Sum of two matrices is: \n";
-    for (int i = 0; i<R; i++) {
-        for (int j = 0; j<C; j++) {
-            cout << mt[i][j]+mt2[i][j] << " ";
-        }
-        cout << "\n";
-    }
     for(int i =0; i<R;i++) {
         delete [] mt[i];
         delete [] mt2[i];
