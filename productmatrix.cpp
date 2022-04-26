@@ -30,14 +30,14 @@ int main() {
             cin >> mt2[i][j];
         }
     }
-    cout << "Sum of two matrices is: \n";
+    cout << "Product of two matrices is: \n";
     for (int i = 0; i<R; i++) {
         for (int j = 0; j<C; j++) {
             int product = 0;
             for (int k = 0; k <RC; k++) {
                 product += (mt[i][k]*mt2[k][j]);
             }
-            cout << product;
+            cout << product << " ";
         }
         cout << "\n";
     }
