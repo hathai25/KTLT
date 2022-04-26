@@ -4,7 +4,7 @@
 using namespace std;
 
 int n;
-string students[1000] = {"Pham Huy Ha Thai", "Tran Duc Nam"};
+string students[100] = {"Pham Huy Ha Thai", "Tran Duc Nam"};
 
 int addStudent() {
     while(1) {
