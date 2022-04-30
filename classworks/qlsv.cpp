@@ -13,33 +13,39 @@ int addStudent() {
         cout << "New student: ";
         getline(cin, name);
         cin.clear();
-        if (name.length() == 0) break;
-        else {
-            int i = 0;
-            while (students[i] != "") {
-                if (students[i+1] == "") {
-                    students[i+1] = name;
-                    cout << "Student add successfully!";
-                    break;
+        if (name.size() < 30) {
+           if (name.length() == 0) break;
+           else {
+                int i = 0;
+                while (students[i] != "") {
+                    if (students[i+1] == "") {
+                        students[i+1] = name;
+                        cout << "Student add successfully!";
+                        break;
+                    }
+                    i++;
                 }
-                i++;
-            }
+            }    
+        }   else {
+            cout << "The student's name is too long, try again!";
         }
     }
     return 0;
 }
 
 void sortStudent() {
-    int i = 0, j = 1;
+    int i = 0;
     while (students[i] != "") {
+        int j = i+1;
         while (students[j] != "") {
-            if (students[i].compare(students[j])) {
+            if (students[i] > students[j]) {
                 students[i].swap(students[j]);
             } 
             j++;
         }  
         i++;
     }
+    cout << "Students have been sorted alphabetically! Try printing it to view!";
 }
 
 void printStudent() {
