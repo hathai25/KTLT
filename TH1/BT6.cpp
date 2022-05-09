@@ -3,31 +3,40 @@
 using namespace std;
 
 void reversearray(int arr[], int size){
+    //Pham Huy Ha Thai - 20204784
     int l = 0, r = size - 1, tmp;
-    while (l < r) {
-        tmp = arr[l];
-        arr[l] = arr[r];
-        arr[r] = tmp;
-        l++;
-        r--;
+    /*****************/
+    while (l < r) { 
+        tmp = arr[l]; 
+        arr[l] = arr[r]; 
+        arr[r] = tmp; 
+        l++; 
+        r--; 
+        /* su dung bien l index tu dau mang
+            bien r index cuoi mang
+            dao gia tri phan tu l va r cua mang
+            tang l va giam r roi lap lai
+        */
     }
-    for (int i = 0; i<size; i++) {
-        cout << arr[i] << " ";
-    }
+    /*****************/
 }
 
 void ptr_reversearray(int *arr, int size){
     int l = 0, r = size - 1, tmp;
+    /*****************/
     while (l < r) {
         tmp = arr[l];
         arr[l] = arr[r];
         arr[r] = tmp;
         l++;
         r--;
+        /* su dung bien l index tu dau mang
+            bien r index cuoi mang
+            dao gia tri phan tu l va r cua mang
+            tang l va giam r roi lap lai
+        */
     }
-    for (int i = 0; i<size; i++) {
-        cout << arr[i] << " ";
-    }
+    /*****************/
 }
 
 int main() {
