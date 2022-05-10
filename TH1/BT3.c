@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-  //Pham Huy Ha Thai - 20204784
+    printf("Ho Va Ten: Pham Huy Ha Thai\n");
+    printf("MSSV: 20204784\n\n");
     int x, y, z;
 
     int *ptr;
@@ -12,8 +13,6 @@ int main() {
 
     printf("%d %d %d\n", x, y, z);
 
-
-
     /*****************/
 
     int add = 100; //khoi tao bien add = 100
@@ -23,8 +22,6 @@ int main() {
     z += *ptr;  //cong z voi gia tri ma con tro tro toi
 
     /*****************/
-
-    
 
     printf("Once again, here are the values of x, y, and z:\n");
 

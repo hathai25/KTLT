@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+    cout << "Pham Huy Ha Thai \nMSSV: 20204784\n";
     int R;
     cout << "Input row & column: \n";
     cin >> R;

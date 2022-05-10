@@ -4,6 +4,8 @@ int *a;
 int n, tmp;
 
 int main(){
+    printf("Ho Va Ten: Pham Huy Ha Thai\n");
+    printf("MSSV: 20204784\n\n");
     //Pham Huy Ha Thai - 20204784
     printf("Enter the number of elements: ");
     scanf("%d", &n);

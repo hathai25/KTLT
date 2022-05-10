@@ -18,6 +18,7 @@ double* maximum(double* a, int size){
 }
 
 int main() {
+    cout << "Pham Huy Ha Thai \nMSSV: 20204784\n";
     double arr[] = {1, 5, 8, 100, 0};
     cout << maximum(arr, 5);
 }

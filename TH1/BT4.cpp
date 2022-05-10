@@ -11,6 +11,7 @@ int counteven(int* arr, int size){
 }
 
 int main() {
+    cout << "Pham Huy Ha Thai \nMSSV: 20204784\n";
     int a[] = {1, 2, 5, 8, 9};
     cout << counteven(a, 5);
 }

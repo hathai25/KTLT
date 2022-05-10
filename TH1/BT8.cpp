@@ -61,6 +61,8 @@ void free_mem(int **mt, int m, int n){
 }
 
 int main() {
+    printf("Ho Va Ten: Pham Huy Ha Thai\n");
+    printf("MSSV: 20204784\n\n");
     int m, n, **mt;
     printf("Enter m, n = ");
     scanf("%d%d", &m, &n);

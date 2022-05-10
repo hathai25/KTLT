@@ -40,6 +40,7 @@ void ptr_reversearray(int *arr, int size){
 }
 
 int main() {
+    cout << "Pham Huy Ha Thai \nMSSV: 20204784\n";
     int arr[] = {9, -1, 4, 5, 7};
     reversearray(arr, 5);
     cout << "\n";

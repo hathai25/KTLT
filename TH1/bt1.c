@@ -1,8 +1,8 @@
 # include <stdio.h>
 int main(){
     //Pham Huy Ha Thai - 20204784
-    printf("Ho Va Ten: Pham Huy Ha Thai");
-    printf("MSSV: 20204784 ");
+    printf("Ho Va Ten: Pham Huy Ha Thai\n");
+    printf("MSSV: 20204784\n\n");
     int x, y, z;
     int* ptr;
     printf("Enter three integers: ");
