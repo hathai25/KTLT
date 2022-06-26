@@ -10,7 +10,7 @@ void init(){
 //# Quy hoạch động,
 void incsubseq(){
     mem[0] = 1;
-
+    
     for(int i=1; i<n; i++){
         mem[i] = 1;
         for(int j=0; j<i; j++){

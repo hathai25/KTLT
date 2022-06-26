@@ -15,13 +15,11 @@ int main() {
     stack<state> s;
     //# sum of selected weights
     int sum = 0;
-    s.push(state(1, -1, -m[1]));
-    s.push(state(1, 0, 0));
-    s.push(state(1, 1, m[1]));
+    s.push(state(1, -1));
     while (!s.empty()){
-        state top = s.top();
-        if (top.i >= n){
-            if (top.s == M){
+        state &top = s.top();
+        if (top.i > n){
+            if (sum == M){
                 for (int i = 1; i <= n; ++i){
                     if (x[i] == -1) cout << '-' << m[i];
                     if (x[i] == 1) cout << '+' << m[i];
@@ -35,11 +33,18 @@ int main() {
 
         //# Khử đệ quy
         /*****************/
-        s.pop();
-        x[top.i]=top.j;
-        s.push(state(top.i+1, -1, top.s-m[top.i+1]));
-        s.push(state(top.i+1, 0,top.s));
-        s.push(state(top.i+1, 1,top.s+m[top.i+1]));
+        if(top.j > -1){
+           sum -= m[top.i] * x[top.i];
+        }
+        //#every subtrees are visited
+        if(top.j > 1){
+            s.pop();
+            continue;
+        }
+        x[top.i] = top.j;
+        sum += m[top.i] * x[top.i];
+        s.push(state(top.i+1, -1));
+        ++top.j;   
         /*****************/
     }
     cout << -1;
