@@ -1,7 +1,9 @@
-#include <iostream> 
+#include <iostream>
+
 using namespace std;
-struct Node { 
-    int data; 
+//Pham Huy Ha Thai - 20204784
+struct Node {
+    int data;
     Node* next;
 
     Node(int data) {
@@ -26,34 +28,34 @@ Node* prepend(Node* head, int data) {
 void print(Node* head) {
     /*****************/
     Node *tmp = head;
-    while (tmp->next != NULL) {
-        printf("%d ", tmp->data);
+    while(tmp != NULL){
+        printf("%d ",tmp->data);
         tmp = tmp->next;
     }
+    cout << endl;
     /*****************/
 }
 
 // return the new head of the reversed list
 Node* reverse(Node* head) {
     /*****************/
-    Node *current = head->next;
-    Node *prev = head;
-    prev->next = NULL;
-    Node  *next = NULL;
+    Node* current = head->next;
+    Node* prev = head; prev->next = NULL;
+    Node* next = NULL;
 
-    while (current != NULL) {
+    while(current != NULL){
         next = current->next;
         current->next = prev;
 
         prev = current;
         current = next;
     }
-
     head = prev;
+
     return head;
     /*****************/
 }
-  
+
 int main() {
     int n, u;
     cin >> n;
@@ -61,15 +63,15 @@ int main() {
     for (int i = 0; i < n; ++i){
         cin >> u;
         head = prepend(head, u);
-    } 
-    
+    }
+
     cout << "Original list: ";
     print(head);
 
     head = reverse(head);
-    
+
     cout << "Reversed list: ";
     print(head);
 
-    return 0; 
+    return 0;
 }
