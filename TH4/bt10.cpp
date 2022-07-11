@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Pham Huy Ha Thai - 20204784
 int n, q;
 vector< vector<string> > vector_train;
 vector< vector<string> > vector_test;
-vector<int> f_max; // tan suat xuat hien tu xuat hien nhieu nhat trong van ban i
+vector<int> freq_max; // tan suat xuat hien tu xuat hien nhieu nhat trong van ban i
 map<string, int> df; // tinh xem tu word nam trong bao nhieu van ban
 map<pair<string, int>, int> fe; // tinh xem tu word xuat hien bao nhieu lan trong van ban i <word, i> = int
 
@@ -71,7 +71,7 @@ void input(){
     }
 }
 
-// preprocessing
+// tien xu ly
 void pre_processing(){
     // tinh tan suat tu xuat hien nhieu nhat trong van ban i
     for(vector<string> str_tmp : vector_train){
@@ -89,12 +89,12 @@ void pre_processing(){
 
             max_f = max(m[word_tmp], max_f);
         }
-        f_max.push_back(max_f);
+        freq_max.push_back(max_f);
     }
 }
 
-// tinh xem word xuat hien bao nhieu lan trong van ban i
-int frequence_word_int_document_i(string word, int i){
+//tinh xem word xuat hien bao nhieu lan trong van ban i
+int freq_word_int_doc_i(string word, int i){
     if(fe.find({word, i}) != fe.end()){ // neu da co trong kho luu tru thi lay ra va tra ve
         return fe[{word, i}];
     }
@@ -110,8 +110,8 @@ int frequence_word_int_document_i(string word, int i){
     return index;
 }
 
-// tinh xem tu word nam trong bao nhieu van ban
-int count_document_contain_word(string word){ // neu da co trong kho luu tru thi lay ket qua va tra ve
+//tinh xem tu word nam trong bao nhieu van ban
+int count_doc_contain_word(string word){ // neu da co trong kho luu tru thi lay ket qua va tra ve
     if(df.find(word) != df.end()){
         return df[word];
     }
@@ -141,9 +141,9 @@ int search_engine(vector<string> list_word){
             if(find(list_word_train_doc.begin(), list_word_train_doc.end(), word) == list_word_train_doc.end()){ // tu nay khong xuat hien trong van ban
                 continue;
             } else {
-                int ftd = frequence_word_int_document_i(word, i);
-                int dft = count_document_contain_word(word);
-                int maxfd = f_max[i];
+                int ftd = freq_word_int_doc_i(word, i);
+                int dft = count_doc_contain_word(word);
+                int maxfd = freq_max[i];
 
                 double tf_word = 0.5 + 0.5 * ((double) ftd / maxfd);
                 double idf_word = log2((double) n / dft);

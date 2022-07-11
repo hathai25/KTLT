@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+//Pham Huy Ha Thai - 20204784
 using namespace std;
 struct data {
     int ai;
@@ -9,7 +10,7 @@ struct data {
         this->ki = ki;
     }
 };
-
+//ham so sanh
 struct compare{
     bool operator() (data a, data b){
         int ra, rb;
@@ -26,7 +27,7 @@ struct compare{
 
 int n, s, kill_enemy, total_enemy;
 priority_queue<data, vector<data>, compare> p_q;
-
+//ham nhap
 void input(){
     cin >> n >> s;
     kill_enemy = 0;
@@ -38,7 +39,7 @@ void input(){
         p_q.push(data(tmp1, tmp2));
     }
 }
-
+//tinh so giac vao lau dai
 void solve(){
     while(!p_q.empty() && s>0){
         data inf = p_q.top(); p_q.pop();
@@ -56,15 +57,7 @@ void solve(){
 }
 
 int calc_enemy(){
-    /*
-    int sum = 0;
-    while(!p_q.empty()){
-        data v = p_q.top(); p_q.pop();
-
-        sum += v.ai;
-    }
-    return sum;
-    */
+    //tinh so giac toi thieu vao lau dai
     return total_enemy - kill_enemy;
 }
 
@@ -72,13 +65,5 @@ int main(){
     input();
     solve();
     cout << calc_enemy();
-
-    /*
-    while(!p_q.empty()){
-        auto v = p_q.top(); p_q.pop();
-
-        cout << v.ai << " " << v.ki << endl;
-    }
-    */
     return 0;
 }

@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Pham Huy Ha Thai - 20204784
 long long n;
 vector<long long> vt;
-vector<long long> L; // mang trai luu tru gia tri ben trai gan nhat nho hon gia tri dang xet
-vector<long long> R; // mang phai luu tru gia tri ben phai gan nhat nho hon gia tri dang xet
+vector<long long> L; //mang trai luu tru gia tri ben trai gan nhat nho hon gia tri dang xet
+vector<long long> R; //mang phai luu tru gia tri ben phai gan nhat nho hon gia tri dang xet
 
-void inputData(){
+void input(){
     cin >> n;
     vt.push_back(-1); // Dat linh canh o 2 dau mang
     for(long long i=0; i<n; i++){
@@ -19,7 +19,7 @@ void inputData(){
 
 void solve(){
     while(true){
-        inputData();
+        input();
         if(n==0) return;
 
         // Xu ly o day
